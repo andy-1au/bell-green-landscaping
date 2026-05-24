@@ -1,9 +1,9 @@
-import lawn1 from '../assets/before_and_after_lawn1.png'
-import lawn2 from '../assets/before_and_after_lawn2.png'
-import lawn3 from '../assets/before_and_after_lawn3.png'
-import lawn4 from '../assets/before_and_after_lawn4.png'
-import lawn5 from '../assets/before_and_after_lawn5.png'
-import lawn6 from '../assets/before_and_after_lawn6.png'
+import lawn1 from '../assets/images/before_and_after_lawn1.png'
+import lawn2 from '../assets/images/before_and_after_lawn2.png'
+import lawn3 from '../assets/images/before_and_after_lawn3.png'
+import lawn4 from '../assets/images/before_and_after_lawn4.png'
+import lawn5 from '../assets/images/before_and_after_lawn5.png'
+import lawn6 from '../assets/images/before_and_after_lawn6.png'
 
 const PROJECTS = [
   {
