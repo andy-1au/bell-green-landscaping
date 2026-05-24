@@ -448,6 +448,40 @@ ul {
   flex-shrink: 0;
 }
 
+.contact__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.contact__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 1.5px solid #d1ddd6;
+  border-radius: 6px;
+  color: var(--green-primary);
+  font-size: 0.94rem;
+  font-weight: 700;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.contact__social-link svg {
+  font-size: 1.15rem;
+}
+
+.contact__social-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--green-primary);
+  background: var(--green-primary);
+  color: var(--white);
+}
+
 .contact__form {
   background: var(--white);
   border: 1px solid #e8f0eb;
