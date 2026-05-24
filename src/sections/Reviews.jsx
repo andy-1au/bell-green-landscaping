@@ -3,7 +3,7 @@ import { FaStar, FaGoogle } from 'react-icons/fa'
 const REVIEWS = [
   {
     name: 'Sarah M.',
-    location: "Bell's Corner",
+    location: 'Northeast Philadelphia',
     initials: 'SM',
     text: "These guys are fantastic. Showed up right on time, did a thorough spring cleanup, and my yard looks better than it has in years. Definitely using them all season.",
     stars: 5,
@@ -17,7 +17,7 @@ const REVIEWS = [
   },
   {
     name: 'Linda R.',
-    location: "Bell's Corner",
+    location: 'Northeast Philadelphia',
     initials: 'LR',
     text: "They redid all my garden beds with fresh mulch — what a difference. Super friendly and easy to communicate with. Highly recommend to anyone in the area.",
     stars: 5,

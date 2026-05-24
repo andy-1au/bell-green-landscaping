@@ -1,4 +1,4 @@
-import { FaLeaf } from 'react-icons/fa'
+import logo from '../assets/BG_Round_Logo_Transparent.png'
 
 export default function Footer() {
   return (
@@ -7,11 +7,10 @@ export default function Footer() {
         <div className="footer__top">
           <div>
             <div className="footer__brand">
-              <FaLeaf />
-              Bell Green Landscaping
+              <img src={logo} alt="Bell Green Landscaping" className="footer__logo-img" />
             </div>
             <p className="footer__tagline">
-              Serving Bell's Corner and the surrounding Philadelphia area with quality
+              Serving Northeast Philadelphia and surrounding neighborhoods with quality
               lawn care and landscaping.
             </p>
           </div>
@@ -35,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer__bottom">
-          <span>© {new Date().getFullYear()} Bell Green Landscaping — Bell's Corner, PA</span>
+          <span>© {new Date().getFullYear()} Bell Green Landscaping — Northeast Philadelphia, PA</span>
         </div>
       </div>
     </footer>

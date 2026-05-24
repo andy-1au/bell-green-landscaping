@@ -4,7 +4,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
 const DETAILS = [
   { icon: <FaPhone />,        label: 'Phone',        value: '(123) 456-7890' },
   { icon: <FaEnvelope />,     label: 'Email',        value: 'hello@bellgreenlandscaping.com' },
-  { icon: <FaMapMarkerAlt />, label: 'Service Area', value: "Bell's Corner & surrounding Philadelphia area" },
+  { icon: <FaMapMarkerAlt />, label: 'Service Area', value: 'Northeast Philadelphia & surrounding neighborhoods' },
   { icon: <FaClock />,        label: 'Hours',        value: 'Mon–Sat, 7am–6pm' },
 ]
 

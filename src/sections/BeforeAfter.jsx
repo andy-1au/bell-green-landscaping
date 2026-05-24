@@ -1,13 +1,13 @@
 const PROJECTS = [
   {
     title: 'Spring Cleanup & Fresh Mulch',
-    location: "Bell's Corner",
+    location: 'Northeast Philadelphia',
     beforeEmoji: '🍂',
     afterEmoji: '🌿',
   },
   {
     title: 'Lawn Mow & Edge',
-    location: 'Nearby neighborhood',
+    location: 'Surrounding neighborhood',
     beforeEmoji: '🌾',
     afterEmoji: '🌱',
   },
