@@ -1,5 +1,6 @@
 import { FaCheckCircle } from 'react-icons/fa'
 import Button from '../components/Button'
+import aboutImage from '../assets/images/about_us.png'
 
 const BULLETS = [
   'Locally owned and operated in Northeast Philadelphia',
@@ -13,7 +14,9 @@ export default function About() {
     <section className="section" id="about">
       <div className="section__inner">
         <div className="about__grid">
-          <div className="about__image-placeholder">🌿</div>
+          <div className="about__image-placeholder">
+            <img src={aboutImage} alt="Bell Green Landscaping team at work" />
+          </div>
           <div className="about__text">
             <span className="section__label">About Us</span>
             <h2 className="section__title">Two Neighbors Who Love a Great Lawn</h2>
