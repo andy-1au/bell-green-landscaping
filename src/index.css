@@ -500,6 +500,13 @@ ul {
   margin-bottom: 20px;
 }
 
+.form__error {
+  display: block;
+  color: #c0392b;
+  font-size: 0.82rem;
+  margin-top: 5px;
+}
+
 .form__group label {
   display: block;
   font-size: 0.88rem;

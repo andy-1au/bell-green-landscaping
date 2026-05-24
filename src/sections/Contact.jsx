@@ -21,15 +21,68 @@ const SOCIAL_LINKS = [
   },
 ]
 
+const WEB3FORMS_KEY = 'fa317b93-18e3-4fbb-b1fd-a5fb37389601'
+const MESSAGE_LIMIT = 500
+
+const validatePhone = val => {
+  if (!val) return ''
+  return /^\D*(\d\D*){10}$/.test(val) ? '' : 'Please enter a valid 10-digit phone number.'
+}
+
+const validateEmail = val => {
+  if (!val) return 'Email address is required.'
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) ? '' : 'Please enter a valid email address.'
+}
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
+  const [fieldErrors, setFieldErrors] = useState({ phone: '', email: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
-  const handleSubmit = e => {
+  const handleChange = e => {
+    const { name, value } = e.target
+    if (name === 'message' && value.length > MESSAGE_LIMIT) return
+    setForm(f => ({ ...f, [name]: value }))
+  }
+
+  const handleBlur = e => {
+    const { name, value } = e.target
+    if (name === 'phone') setFieldErrors(f => ({ ...f, phone: validatePhone(value) }))
+    if (name === 'email') setFieldErrors(f => ({ ...f, email: validateEmail(value) }))
+  }
+
+  const handleSubmit = async e => {
     e.preventDefault()
-    // TODO: wire up to Formspree or EmailJS
-    setSubmitted(true)
+    const phoneErr = validatePhone(form.phone)
+    const emailErr = validateEmail(form.email)
+    setFieldErrors({ phone: phoneErr, email: emailErr })
+    if (phoneErr || emailErr) return
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New Quote Request from ${form.name}`,
+          from_name: 'Bell Green Landscaping Website',
+          ...form,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        setError('Something went wrong. Please try again or call us directly.')
+      }
+    } catch {
+      setError('Unable to send. Please try again or call us directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -92,8 +145,9 @@ export default function Contact() {
                     <input
                       id="phone" name="phone" type="tel"
                       placeholder="(555) 000-0000"
-                      value={form.phone} onChange={handleChange}
+                      value={form.phone} onChange={handleChange} onBlur={handleBlur}
                     />
+                    {fieldErrors.phone && <span className="form__error">{fieldErrors.phone}</span>}
                   </div>
                 </div>
                 <div className="form__group">
@@ -101,8 +155,9 @@ export default function Contact() {
                   <input
                     id="email" name="email" type="email"
                     placeholder="jane@example.com"
-                    value={form.email} onChange={handleChange} required
+                    value={form.email} onChange={handleChange} onBlur={handleBlur} required
                   />
+                  {fieldErrors.email && <span className="form__error">{fieldErrors.email}</span>}
                 </div>
                 <div className="form__group">
                   <label htmlFor="service">Service Needed</label>
@@ -117,15 +172,28 @@ export default function Contact() {
                   </select>
                 </div>
                 <div className="form__group">
-                  <label htmlFor="message">Additional Details</label>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                    <label htmlFor="message">Additional Details</label>
+                    <span style={{ fontSize: '0.8rem', color: form.message.length >= MESSAGE_LIMIT ? '#c0392b' : 'var(--text-light)' }}>
+                      {form.message.length}/{MESSAGE_LIMIT}
+                    </span>
+                  </div>
                   <textarea
                     id="message" name="message"
                     placeholder="Describe your yard or what you need help with..."
                     value={form.message} onChange={handleChange}
                   />
                 </div>
-                <button type="submit" className="btn btn--green" style={{ width: '100%', marginTop: 4 }}>
-                  Send My Request
+                {error && (
+                  <p style={{ color: '#c0392b', fontSize: '0.9rem', marginBottom: 10 }}>{error}</p>
+                )}
+                <button
+                  type="submit"
+                  className="btn btn--green"
+                  style={{ width: '100%', marginTop: 4 }}
+                  disabled={loading}
+                >
+                  {loading ? 'Sending…' : 'Send My Request'}
                 </button>
               </form>
             )}
