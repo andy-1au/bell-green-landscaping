@@ -1,33 +1,33 @@
-import { FaLeaf, FaTree, FaSeedling, FaBroom, FaRecycle, FaMapMarkerAlt } from 'react-icons/fa'
+import { GiHighGrass, GiFlowerPot, GiGardeningShears, GiRake, GiFallingLeaf, GiTrenchSpade } from 'react-icons/gi'
 
 const SERVICES = [
   {
-    icon: <FaLeaf />,
+    icon: <GiHighGrass />,
     title: 'Lawn Mowing & Maintenance',
     desc: 'Regular mowing, edging, and trimming to keep your lawn looking sharp all season long.',
   },
   {
-    icon: <FaSeedling />,
+    icon: <GiFlowerPot />,
     title: 'Mulching & Garden Beds',
     desc: 'Fresh mulch installation and garden bed cleanup to boost curb appeal and protect your plants.',
   },
   {
-    icon: <FaTree />,
+    icon: <GiGardeningShears />,
     title: 'Hedge & Shrub Trimming',
     desc: 'Precise shaping and trimming to keep hedges, bushes, and shrubs neat and healthy.',
   },
   {
-    icon: <FaBroom />,
+    icon: <GiRake />,
     title: 'Spring & Fall Cleanups',
     desc: 'Thorough seasonal yard cleanups to prep your lawn for the months ahead.',
   },
   {
-    icon: <FaRecycle />,
+    icon: <GiFallingLeaf />,
     title: 'Leaf Removal',
     desc: 'Complete leaf cleanup and disposal so your lawn can breathe heading into winter.',
   },
   {
-    icon: <FaMapMarkerAlt />,
+    icon: <GiTrenchSpade />,
     title: 'Custom Landscaping',
     desc: 'Have something specific in mind? We do custom work too — reach out and let us know.',
   },
