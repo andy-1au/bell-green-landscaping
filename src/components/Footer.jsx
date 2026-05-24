@@ -42,7 +42,7 @@ export default function Footer() {
             <h4>Contact Us</h4>
             <ul>
               <li><a href="tel:+1234567890">(123) 456-7890</a></li>
-              <li><a href="mailto:hello@bellgreenlandscaping.com">Email Us</a></li>
+              <li><a href="mailto:hello@bellgreen.land">Email Us</a></li>
               <li><a href="#contact">Free Quote</a></li>
             </ul>
             <div className="footer__socials" aria-label="Bell Green Landscaping social media links">
