@@ -1,4 +1,4 @@
-import logo from '../assets/BG_Round_Logo_Transparent.png'
+import logo from '../assets/logo/BG_Round_Logo_Transparent.png'
 import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 const SOCIAL_LINKS = [

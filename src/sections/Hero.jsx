@@ -1,5 +1,5 @@
 import Button from '../components/Button'
-import banner from '../assets/BG_Banner_Transparent.png'
+import banner from '../assets/logo/BG_Banner_Transparent.png'
 
 export default function Hero() {
   return (

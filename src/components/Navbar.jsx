@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import logo from '../assets/BG_Round_Logo_Transparent.png'
+import logo from '../assets/logo/BG_Round_Logo_Transparent.png'
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
