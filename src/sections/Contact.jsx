@@ -1,11 +1,24 @@
 import { useState } from 'react'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 const DETAILS = [
   { icon: <FaPhone />,        label: 'Phone',        value: '(123) 456-7890' },
-  { icon: <FaEnvelope />,     label: 'Email',        value: 'hello@bellgreenlandscaping.com' },
-  { icon: <FaMapMarkerAlt />, label: 'Service Area', value: "Bell's Corner & surrounding Philadelphia area" },
+  { icon: <FaEnvelope />,     label: 'Email',        value: 'hello@bellgreen.land' },
+  { icon: <FaMapMarkerAlt />, label: 'Service Area', value: 'Northeast Philadelphia & surrounding neighborhoods' },
   { icon: <FaClock />,        label: 'Hours',        value: 'Mon–Sat, 7am–6pm' },
+]
+
+const SOCIAL_LINKS = [
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=61590357091199',
+    icon: <FaFacebookF />,
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/bellgreenlandscaping/',
+    icon: <FaInstagram />,
+  },
 ]
 
 export default function Contact() {
@@ -39,6 +52,21 @@ export default function Contact() {
                 <span><strong>{d.label}:</strong> {d.value}</span>
               </div>
             ))}
+            <div className="contact__socials" aria-label="Bell Green Landscaping social media links">
+              {SOCIAL_LINKS.map(link => (
+                <a
+                  className="contact__social-link"
+                  href={link.href}
+                  key={link.label}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visit Bell Green Landscaping on ${link.label}`}
+                >
+                  {link.icon}
+                  <span>{link.label}</span>
+                </a>
+              ))}
+            </div>
           </div>
 
           <div className="contact__form">

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { FaLeaf, FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import logo from '../assets/BG_Round_Logo_Transparent.png'
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
@@ -15,8 +16,8 @@ export default function Navbar() {
     <header className="navbar">
       <div className="navbar__inner">
         <a href="#home" className="navbar__logo">
-          <FaLeaf />
-          Bell Green Landscaping
+          <img src={logo} alt="Bell Green Landscaping" className="navbar__logo-img" />
+          <span>Bell Green Landscaping</span>
         </a>
         <nav className="navbar__links">
           {NAV_LINKS.map(l => <a key={l.href} href={l.href}>{l.label}</a>)}

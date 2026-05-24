@@ -2,7 +2,7 @@ import { FaCheckCircle } from 'react-icons/fa'
 import Button from '../components/Button'
 
 const BULLETS = [
-  "Locally owned and operated — we live in Bell's Corner",
+  'Locally owned and operated in Northeast Philadelphia',
   'We show up on time, every time',
   'Friendly, communicative, and easy to work with',
   'We take pride in every yard we touch',
@@ -18,7 +18,7 @@ export default function About() {
             <span className="section__label">About Us</span>
             <h2 className="section__title">Two Neighbors Who Love a Great Lawn</h2>
             <p className="about__body">
-              We're a two-person team based right here in Bell's Corner. We started Bell Green
+              We're a two-person local team based in Northeast Philadelphia. We started Bell Green
               because we believe lawn care should feel personal — not like a number in a queue.
               When you hire us, you get us.
             </p>

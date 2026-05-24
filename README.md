@@ -1,6 +1,6 @@
 # Bell Green Landscaping
 
-Professional lawn care and landscaping services for homeowners in Bell's Corner and the greater Philadelphia area.
+Professional lawn care and landscaping services for homeowners in Northeast Philadelphia and surrounding neighborhoods.
 
 **Live site:** [bellgreenlandscaping.com](https://bellgreenlandscaping.com)
 
