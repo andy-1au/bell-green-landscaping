@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 const DETAILS = [
-  { icon: <FaPhone />,        label: 'Phone',        value: '(123) 456-7890' },
+  { icon: <FaPhone />,        label: 'Phone',        value: '(267) 225-2627' },
   { icon: <FaEnvelope />,     label: 'Email',        value: 'hello@bellgreen.land' },
   { icon: <FaMapMarkerAlt />, label: 'Service Area', value: 'Northeast Philadelphia & surrounding neighborhoods' },
   { icon: <FaClock />,        label: 'Hours',        value: 'Mon–Sat, 7am–6pm' },
